@@ -35,7 +35,10 @@ typedef enum PortType {
 	COM1 = 1,
 	COM2 = 2,
 	COM3 = 3,
-	COM4 = 4
+	COM4 = 4,
+	COM5 = 5,
+	COM6 = 6,
+	COM7 = 7
 } PortType;
 
 typedef enum ParityType {

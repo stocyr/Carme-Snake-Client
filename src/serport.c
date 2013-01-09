@@ -84,12 +84,24 @@ int InitSerialPort(PortType Port, BaudrateType BaudRate, ParityType Parity,
 	    break;
 
       case COM3 :
-              PortId = "COM3";
-      	    break;
+        PortId = "COM3";
+        break;
 
       case COM4 :
-              PortId = "COM4";
-      	    break;
+        PortId = "COM4";
+      	break;
+
+      case COM5 :
+        PortId = "COM5";
+      	break;
+
+      case COM6 :
+        PortId = "COM6";
+      	break;
+
+      case COM7 :
+        PortId = "COM7";
+      	break;
 
       default:
 	    return -1;
