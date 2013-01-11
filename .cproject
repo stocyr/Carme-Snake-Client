@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?><cproject>
+<?fileVersion 4.0.0?>
+
+<cproject>
 <storageModule moduleId="org.eclipse.cdt.core.settings">
 
 <cconfiguration id="cdt.managedbuild.config.gnu.mingw.exe.release.604363360">
@@ -41,7 +43,7 @@
 <listOptionValue builtIn="false" value="QtCore4"/>
 </option>
 <option id="gnu.cpp.link.option.paths.438066856" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CarmeSnake-PC2/libs}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Carme-Snake-Client/libs}&quot;"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1510543449" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -2471,6 +2473,6 @@
 </cconfiguration>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<project id="Tequiz.cdt.managedbuild.target.gnu.mingw.exe.1405362931" name="Executable" projectType="cdt.managedbuild.target.gnu.mingw.exe"/>
+<project id="Carme-Snake-PC.cdt.managedbuild.target.gnu.mingw.exe.952872716" name="Executable" projectType="cdt.managedbuild.target.gnu.mingw.exe"/>
 </storageModule>
 </cproject>

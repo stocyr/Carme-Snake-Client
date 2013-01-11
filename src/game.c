@@ -123,34 +123,34 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 		 do
 	     {
 
-			 if(kbhit())	// Wenn Taste gedrückt
+			 if(IsKeyPressReady())	// Wenn Taste gedrückt
 			 {
 
 	        	key_old = key;			// Alter Wert speichern
-	        	key=getkey();
+	        	key=GetKeyPress();
 
 				switch(key)
 				{
-				case KEY_UP:
-					if(key_old != KEY_DOWN)
+				case W_KEY_CURSOR_UP:
+					if(key_old != W_KEY_CURSOR_DOWN)
 					{
 						key = 'u';
 					}
 					break;
-				case KEY_DOWN:
-					if(key_old != KEY_UP)
+				case W_KEY_CURSOR_DOWN:
+					if(key_old != W_KEY_CURSOR_UP)
 					{
 						key = 'd';
 					}
 					break;
-				case KEY_LEFT:
-					if(key_old != KEY_RIGHT)
+				case W_KEY_CURSOR_LEFT:
+					if(key_old != W_KEY_CURSOR_RIGHT)
 					{
 						key = 'l';
 					}
 					break;
-				case KEY_RIGHT:
-					if(key_old != KEY_LEFT)
+				case W_KEY_CURSOR_RIGHT:
+					if(key_old != W_KEY_CURSOR_LEFT)
 					{
 						key = 'r';
 					}
