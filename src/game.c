@@ -155,7 +155,10 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 						key = 'r';
 					}
 					break;
-				case EXIT:
+				case W_KEY_ESCAPE:
+				case W_KEY_CLOSE_WINDOW:
+					ShutdownSerialPort();
+					return 0;
 					break;
 				default:
 					key = NO_VALID_KEY;
