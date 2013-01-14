@@ -22,15 +22,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <conio.h>  // for kbhit
 #include "highscore.h"
 #include "game.h"
 #include "window.h"
 #include "serport.h"
 
 #define NO_VALID_KEY 	-1
-
-int getkey(void);
 
 /*****************************************************************************/
 /*  Funktion   : Game				                            Version 1.0  */
@@ -120,8 +117,6 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 
 			 if(IsKeyPressReady())	// Wenn Taste gedrückt
 			 {
-
-	        	key_old = key;			// Alter Wert speichern
 	        	key = GetKeyPress();
 
 				switch(key)
@@ -164,7 +159,8 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 				{
 					 putc(key,stdout);
 					 SendByteToSerialPort(key);
-
+					 // Alter Wert speichern
+					 key_old = key;
 				}
 
 	         }
@@ -189,24 +185,6 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 /****************************************************************************/
 /*	Ende Funktion Game      												*/
 /****************************************************************************/
-
-int getkey(void)
-{
-   int in;
-   //in = getch();
-
-
-   in = GetKeyPress();
-   printf("in: %d\n",in);
-   if (in == 0x00 || in == 0xe0)
-   {
-      return(getch()+0x100);
-   }
-   else
-   {
-      return NO_VALID_KEY;
-   }
-}
 
 /*****************************************************************************/
 /*  Ende Modul Game                                          				 */
