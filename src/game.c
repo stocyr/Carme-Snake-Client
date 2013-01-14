@@ -156,7 +156,7 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 				}
 				// Nur wenn Key gültig ist und der Wert geändert hat ein Zeichen ans Carmekit senden
 				if(dir != dir_old)
-				{
+                {
 					 SendByteToSerialPort(dir);
 					 // Alter Wert speichern
 					 dir_old = dir;
