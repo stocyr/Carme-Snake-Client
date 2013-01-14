@@ -1,10 +1,10 @@
-a2;1
-a2;1
-;0
-;0
-;0
-;0
-;0
-;0
-;0
-;0
+Heidi ;7
+Luke "Luki" Skywalker ;6
+Speck Rudolf;5
+Hans Peter;5
+Housi;5
+Schaf Seckl;4
+Mischa Manfred;3
+Al Quaida;3
+Geissenpeter;2
+Nudlä;2

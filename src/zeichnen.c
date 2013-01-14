@@ -39,13 +39,14 @@
 
 void Menu_zeichnen(void){
 	/* Hauptmenu Anzeigen zeichnen */
-	SelectFont("Arial MS", 45, FONT_BOLD);
-	DrawTextXY (250, 70, COL_GREEN, "CARME-SNAKE");
-	SelectFont("Arial MS", 30, FONT_NORMAL);
+	SelectFont("Bauhaus 93", 45, FONT_BOLD);
+	DrawTextXY (800, 300, COL_BLUE, "CARME-SNAKE");
+	SelectFont("Papyrus", 30, FONT_NORMAL);
 	DrawTextXY (240, 230, COL_GREEN, "1 Spiel starten");
-	DrawTextXY (236, 300, COL_YELLOW, "2 Hall of Fame");
+	DrawTextXY (236, 300, COL_LIGHTBLUE, "2 Hall of Fame");
 	DrawTextXY (230, 370, COL_RED, "3 Spiel beenden");
-	DrawTextXY (80, 530, COL_GREEN, "P. Ambühl, M. Bärtschi, C. Stoller");
+	SelectFont("Agency FB", 16, FONT_NORMAL);
+	DrawTextXY (600, 530, COL_LIGHTBLUE, "P. Ambühl, M. Bärtschi, C. Stoller");
 }
 
 
@@ -75,11 +76,11 @@ void Highscore_zeichnen(const char *ApplicationPath){
 	highscore(Name, 1, ApplicationPath);
 	ClearWindow ();
 
-	SelectFont("Arial MS", 30, FONT_BOLD);
-	DrawTextXY (220, 50, COL_GREEN, "Highscoreliste");
+	SelectFont("Bauhaus 93", 30, FONT_BOLD);
+	DrawTextXY (220, 50, COL_BLUE, "Highscoreliste");
 
 	// Zeichnet die Highscoreliste
-	SelectFont("Arial MS", 30, FONT_NORMAL);
+	SelectFont("Papyrus", 30, FONT_NORMAL);
 	for(index=9; index>=0; index--){
 
 		// Umwandlung der Punke
@@ -88,7 +89,7 @@ void Highscore_zeichnen(const char *ApplicationPath){
 
 		// Name und zugehörige Punkte darstellen
 
-		DrawTextXY (50, 150+index*40, COL_GREEN, topten[index].name);
+		DrawTextXY (50, 150+index*40, COL_LIGHTBLUE, topten[index].name);
 		DrawTextXY (530, 150+index*40, COL_RED, ausgabe2);
 	}
 }

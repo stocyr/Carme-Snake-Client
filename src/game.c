@@ -29,11 +29,6 @@
 #include "serport.h"
 
 #define NO_VALID_KEY 	-1
-#define KEY_UP			328
-#define KEY_DOWN		336
-#define KEY_LEFT		331
-#define KEY_RIGHT		333
-#define EXIT			27
 
 int getkey(void);
 
@@ -127,7 +122,7 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 			 {
 
 	        	key_old = key;			// Alter Wert speichern
-	        	key=GetKeyPress();
+	        	key = GetKeyPress();
 
 				switch(key)
 				{
