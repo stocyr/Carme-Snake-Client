@@ -58,7 +58,8 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 	/* Bildschirm löschen */
 	ClearWindow();
 
-	int Key=0;
+	int Key = 0;
+	int port = 1;		///< Wird benutzt um den COMPORT auszuwählen.
 	Menu_zeichnen();
 
 	/* Taste einlesen */
@@ -69,7 +70,7 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 		if(Key=='1'){
 
 			/* Game aufrufen */
-			Game(argc, argv, ApplicationPath);
+			Game(port, ApplicationPath);
 
 			/* Hauptmenu anzeigen */
 			Key=0;
@@ -95,6 +96,33 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 
 			/* Programmende - Fehlerlose Ausführung zurückmelden */
 			return 0;
+		}
+		if(Key=='4'){
+
+			ClearWindow();
+
+			SelectFont("Arial MS", 15, FONT_NORMAL);
+			DrawTextXY (50, 50, COL_GREEN, "Bitte COMPORT Nummer eingeben (1 bis 7):");
+
+			while (!IsKeyPressReady()){
+			}
+			Key = GetKeyPress();
+
+			if (Key >= '1' && Key <= '7'){
+				port = Key - '0';
+			}
+
+			Key = -1;
+
+			DrawTextXY (50, 80, COL_GREEN, "Gewählt: COM");
+			char buffer[] = " \0";
+			buffer[0] = port + '0';
+			DrawTextXY (177, 80, COL_GREEN, buffer);
+
+			WaitMs(1200);
+
+			ClearWindow();
+			Menu_zeichnen();
 		}
 	}
 }

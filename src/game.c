@@ -48,7 +48,7 @@
  * Liest den Spielername ein, verabreitet die Steuerbefehle für die Schlange und den Score
  */
 
-int Game(int argc, char* argv[], const char *ApplicationPath) {
+int Game(int port, const char *ApplicationPath) {
 
 	// Variabeln definieren
     char Name[20];		///< Array für Spielername
@@ -57,7 +57,6 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 	int dir = 0;		///< Variable zum speichern der Richtung
 	int dir_old = 0;	///< Variable zum speichern der letzten Richtung
 	int score;			///< Variable für den Score
-	int comport;		///< Variable für die Portnummer
 	int winner;			///< Variable für Rückgabewert der Highscorefunktion
 						///< Wird 1 wenn Highscore geknackt wurde, sonst 0
 	char* argument;
@@ -91,28 +90,12 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 		// Bisherige Eingabe anzeigen
 		DrawTextXY (270, 50, COL_RED, Name);
 	}
-	ClearWindow();
 
-	comport = COM4;
+	DrawTextXY (50, 80, COL_GREEN, "Now playing! [ESC] to escape");
 
-	printf("\nagruments: argc:%d  argv[0]:%s  argv[1]%s", argc, argv[0], argv[1]);
-
-	if(argc == 2)
-	{
-	// ein argument wurde mitgegeben -> COM port
-		argument = argv[1];
-
-		if(argument[0] >= '0' && argument[0] <= '9')
-		{
-		 // wenn gültig
-			comport = argument[0] - '0';
-		}
-	 }
-
-
-	 if (InitSerialPort(comport, Bd9600, P_NONE, 8, 1) == 0)	// COM1
+	 if (InitSerialPort(port, Bd9600, P_NONE, 8, 1) == 0)	// COM1
 	 {
-		 printf("\nPort opened: COM%d", comport);
+		 printf("\nPort opened: COM%d", port);
 		 do
 	     {
 			 if(IsKeyPressReady())	// Wenn Taste gedrückt
@@ -172,10 +155,22 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 	     ShutdownSerialPort();
 
 	     winner=highscore(Name , score , ApplicationPath);
+	     SelectFont("Arial MS", 20, FONT_ITALIC);
+
 	     if(winner == 1)
 	     {
-	    	 DrawTextXY (220, 50, COL_GREEN, "! ! ! Du hast den High Score geknackt ! ! !");
+	    	 DrawTextXY (220, 200, COL_GREEN, "Du hast den High Score geknackt!");
 	     }
+	     else
+	     {
+	    	 DrawTextXY (220, 200, COL_GREEN, "Game over.");
+	     }
+
+	     SelectFont("Arial MS", 15, FONT_NORMAL);
+	     DrawTextXY (220, 230, COL_GREEN, "Press any key to continue.");
+
+	     while(!IsKeyPressReady())
+	    	 ;
 	  }
 
 	return 0;
