@@ -66,7 +66,6 @@ int InitSerialPort(PortType Port, BaudrateType BaudRate, ParityType Parity,
 					                int Bits, int Stopbits)
 {
    /* Method data declaration      */
-   int i;
    char *PortId = "";
    COMMTIMEOUTS   NewTimeout = {0};
    DCB            DeviceControlBlock;

@@ -754,7 +754,7 @@
 <listOptionValue builtIn="false" value="QtCore4"/>
 </option>
 <option id="gnu.cpp.link.option.paths.1106562535" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Tequiz_Project/libs}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Carme-Snake-Client/libs}&quot;"/>
 </option>
 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1131803526" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

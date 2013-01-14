@@ -22,15 +22,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <conio.h>  // for kbhit
 #include "highscore.h"
 #include "game.h"
 #include "window.h"
 #include "serport.h"
 
 #define NO_VALID_KEY 	-1
-
-int getkey(void);
 
 /*****************************************************************************/
 /*  Funktion   : Game				                            Version 1.0  */
@@ -57,7 +54,8 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
     char Name[20];		///< Array für Spielername
     int Zeichen;		///< Variable zur Verarbeitung der eingelesenen Zeichen
 	int key;			///< Variable zum einlesen der Zeichen von der Tastatur
-	int key_old;		///< Variable zum speichern des letzen eingelesenen Zeichens
+	int dir = 0;		///< Variable zum speichern der Richtung
+	int dir_old = 0;	///< Variable zum speichern der letzten Richtung
 	int score;			///< Variable für den Score
 	int comport;		///< Variable für die Portnummer
 	int winner;			///< Variable für Rückgabewert der Highscorefunktion
@@ -117,37 +115,34 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 		 printf("\nPort opened: COM%d", comport);
 		 do
 	     {
-
 			 if(IsKeyPressReady())	// Wenn Taste gedrückt
 			 {
-
-	        	key_old = key;			// Alter Wert speichern
 	        	key = GetKeyPress();
 
 				switch(key)
 				{
 				case W_KEY_CURSOR_UP:
-					if(key_old != W_KEY_CURSOR_DOWN)
+					if(dir_old != 'd')
 					{
-						key = 'u';
+						dir = 'u';
 					}
 					break;
 				case W_KEY_CURSOR_DOWN:
-					if(key_old != W_KEY_CURSOR_UP)
+					if(dir_old != 'u')
 					{
-						key = 'd';
+						dir = 'd';
 					}
 					break;
 				case W_KEY_CURSOR_LEFT:
-					if(key_old != W_KEY_CURSOR_RIGHT)
+					if(dir_old != 'r')
 					{
-						key = 'l';
+						dir = 'l';
 					}
 					break;
 				case W_KEY_CURSOR_RIGHT:
-					if(key_old != W_KEY_CURSOR_LEFT)
+					if(dir_old != 'l')
 					{
-						key = 'r';
+						dir = 'r';
 					}
 					break;
 				case W_KEY_ESCAPE:
@@ -160,11 +155,11 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 					break;
 				}
 				// Nur wenn Key gültig ist und der Wert geändert hat ein Zeichen ans Carmekit senden
-				if((key > 0) && (key != key_old))
+				if(dir != dir_old)
 				{
-					 putc(key,stdout);
-					 SendByteToSerialPort(key);
-
+					 SendByteToSerialPort(dir);
+					 // Alter Wert speichern
+					 dir_old = dir;
 				}
 
 	         }
@@ -189,24 +184,6 @@ int Game(int argc, char* argv[], const char *ApplicationPath) {
 /****************************************************************************/
 /*	Ende Funktion Game      												*/
 /****************************************************************************/
-
-int getkey(void)
-{
-   int in;
-   //in = getch();
-
-
-   in = GetKeyPress();
-   printf("in: %d\n",in);
-   if (in == 0x00 || in == 0xe0)
-   {
-      return(getch()+0x100);
-   }
-   else
-   {
-      return NO_VALID_KEY;
-   }
-}
 
 /*****************************************************************************/
 /*  Ende Modul Game                                          				 */

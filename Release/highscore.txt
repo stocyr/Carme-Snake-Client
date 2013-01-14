@@ -1,3 +1,4 @@
+;10
 Heidi ;7
 Luke "Luki" Skywalker ;6
 Speck Rudolf;5
@@ -7,4 +8,3 @@ Schaf Seckl;4
 Mischa Manfred;3
 Al Quaida;3
 Geissenpeter;2
-Nudlä;2
