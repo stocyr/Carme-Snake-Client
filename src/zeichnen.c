@@ -44,8 +44,8 @@ void Menu_zeichnen(void){
 	SelectFont("Papyrus", 30, FONT_NORMAL);
 	DrawTextXY (240, 230, COL_GREEN, "1 Spiel starten");
 	DrawTextXY (240, 300, COL_LIGHTBLUE, "2 Hall of Fame");
-	DrawTextXY (240, 370, COL_RED, "3 Spiel beenden");
-	DrawTextXY (240, 440, COL_YELLOW, "4 Comport wählen");
+	DrawTextXY (240, 370, COL_YELLOW, "3 Comport wählen");
+	DrawTextXY (240, 440, COL_RED, "4 Spiel beenden");
 	SelectFont("Agency FB", 16, FONT_NORMAL);
 	DrawTextXY (600, 530, COL_LIGHTBLUE, "P. Ambühl, M. Bärtschi, C. Stoller");
 }
