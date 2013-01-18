@@ -89,7 +89,7 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 			ClearWindow();
 			Menu_zeichnen();
 		}
-		if(Key=='3'){
+		if(Key=='3' || Key==W_KEY_ESCAPE || Key==W_KEY_CLOSE_WINDOW){
 
 			/* Grafikfenster schliessen */
 			CloseGraphic();

@@ -59,7 +59,6 @@ int Game(int port, const char *ApplicationPath) {
 	int score;			///< Variable für den Score
 	int winner;			///< Variable für Rückgabewert der Highscorefunktion
 						///< Wird 1 wenn Highscore geknackt wurde, sonst 0
-	char* argument;
 	int i = 0;
 
 
