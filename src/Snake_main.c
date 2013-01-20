@@ -50,7 +50,10 @@
  * Zeigt ein Menu auf dem PC-Bildschirm an,
  * welches die Optionen Spiel starten,
  * Highscore anzeigen, und Spiel beenden an.
- * Ruft externe Grafikfunktionen und game(...)
+ * Ruft externe Grafikfunktionen und game(...) auf.
+ *
+ * Flowchart:
+ * <img src="../../snake_main_Flowchart.png">
  * @return gibt 0 zurück
  */
 int gfxmain(int argc, char* argv[], const char *ApplicationPath)

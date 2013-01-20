@@ -52,7 +52,10 @@
 
 /**
  * Steuerung des eigentlichen Spiels.
- * Liest den Spielername ein, verabreitet die Steuerbefehle für die Schlange und den Score
+ * Liest den Spielername ein, verabreitet die Steuerbefehle für die Schlange und den Score.
+ *
+ * Flowchart:
+ * <img src="../../game_highscore_Flowchart.png">
  */
 
 int Game(int port, const char *ApplicationPath) {
