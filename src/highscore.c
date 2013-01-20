@@ -24,9 +24,9 @@
 //Header Dateien implementieren
 #include "highscore.h"
 #include "window.h"
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*****************************************************************************/
 /*  Funktion   :   Highscore                                    Version 1.0  */
@@ -161,9 +161,9 @@ void fileload (const char *Path, player topten[11]) {
 void filesave (const char *Path, player topten[11]){
 
 	//Variablen definieren
-	int i;					///<Index für for-Schlaufe
-
-	char buffer2[1000];		///<Buffer für den Pfad des .txt
+	int i;
+	//Buffer für den Pfad des .txt
+	char buffer2[1000];
 
 	//Externes File definieren
 	FILE *Highscore;
@@ -240,6 +240,8 @@ void sort(player topten[11]){
 /****************************************************************************/
 /*	Ende Funktion sort      												*/
 /****************************************************************************/
+
+
 
 /*****************************************************************************/
 /*  Ende Modul highscore                                       				 */

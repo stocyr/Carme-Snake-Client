@@ -13,11 +13,10 @@
 /*  File Name  :  zeichnen.h                                                 */
 /*                                                                           */
 /*****************************************************************************/
-
 #ifndef ZEICHNEN_H
 #define ZEICHNEN_H
 
-// externe (globale) Funktionen
+/* externe (globale) Funktionen */
 extern void Menu_zeichnen(void);
 extern void Highscore_zeichnen(const char *ApplicationPath);
 

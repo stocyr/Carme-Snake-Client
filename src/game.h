@@ -17,6 +17,6 @@
 #define GAME_H
 
 /* externe (globale) Funktion */
-extern int Game(int argc, char* argv[], const char *ApplicationPath);
+extern int Game(int port, const char *ApplicationPath);
 
 #endif

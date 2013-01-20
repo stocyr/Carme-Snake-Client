@@ -44,7 +44,7 @@
 /*               01.04.2012 erste Versuche mit Spielfeld / Bewegung          */
 /*               02.04.2012 Funktionalität in Funktionen ausgelagert         */
 /*				 20.06.2012 überarbeitet									 */
-/*				 24.12.2012 Kopiert von Tequiz, Totalüberarbeitung und		 */
+/*				 24.12.2012 ambup1 Kopiert von Tequiz, Totalüberarbeitung und*/
 /*							Anpassung an Carme-Snake						 */
 /*                                                                           */
 /*****************************************************************************/
@@ -52,7 +52,7 @@
 
 /**
  * Steuerung des eigentlichen Spiels.
- * Liest den Spielername ein, verabreitet die Steuerbefehle für die Schlange und den Score.
+ * Liest den Spielername ein, verabreitet die Steuerbefehle für die Schlange und den Score
  *
  * Flowchart:
  * <img src="../../game_highscore_Flowchart.png">
@@ -61,14 +61,14 @@
 int Game(int port, const char *ApplicationPath) {
 
 	// Variabeln definieren
-    char Name[20];		///< Array für Spielername
-    int Zeichen;		///< Variable zur Verarbeitung der eingelesenen Zeichen
-	int key;			///< Variable zum einlesen der Zeichen von der Tastatur
-	int dir = 0;		///< Variable zum speichern der Richtung
-	int dir_old = 0;	///< Variable zum speichern der letzten Richtung
-	int score;			///< Variable für den Score
-	int winner;			///< Variable für Rückgabewert der Highscorefunktion
-						///< Wird 1 wenn Highscore geknackt wurde, sonst 0
+    char Name[20];		// Array für Spielername
+    int Zeichen;		// Variable zur Verarbeitung der eingelesenen Zeichen
+	int key;			// Variable zum einlesen der Zeichen von der Tastatur
+	int dir = 0;		// Variable zum speichern der Richtung
+	int dir_old = 0;	// Variable zum speichern der letzten Richtung
+	int score;			// Variable für den Score
+	int winner;			// Variable für Rückgabewert der Highscorefunktion
+						// Wird 1 wenn Highscore geknackt wurde, sonst 0
 	int i = 0;
 
 

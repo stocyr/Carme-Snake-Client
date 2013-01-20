@@ -41,18 +41,15 @@
 /*                                                                           */
 /*****************************************************************************/
 
-/**
- * Bildet das Menufenster auf dem Bildschirm ab.
- */
-
 void Menu_zeichnen(void){
 	/* Hauptmenu Anzeigen zeichnen */
 	SelectFont("Bauhaus 93", 45, FONT_BOLD);
 	DrawTextXY (800, 300, COL_BLUE, "CARME-SNAKE");
 	SelectFont("Papyrus", 30, FONT_NORMAL);
 	DrawTextXY (240, 230, COL_GREEN, "1 Spiel starten");
-	DrawTextXY (236, 300, COL_LIGHTBLUE, "2 Hall of Fame");
-	DrawTextXY (230, 370, COL_RED, "3 Spiel beenden");
+	DrawTextXY (240, 300, COL_LIGHTBLUE, "2 Hall of Fame");
+	DrawTextXY (240, 370, COL_YELLOW, "3 Comport wählen");
+	DrawTextXY (240, 440, COL_RED, "4 Spiel beenden");
 	SelectFont("Agency FB", 16, FONT_NORMAL);
 	DrawTextXY (600, 530, COL_LIGHTBLUE, "P. Ambühl, M. Bärtschi, C. Stoller");
 }
@@ -74,15 +71,14 @@ void Menu_zeichnen(void){
 
 /**
  * Bildet die Highscoreliste auf dem Bildschirm ab.
- * @param *ApplicationPath ist Pointer auf den Pfad der ausführbaren Datei
  */
 
 void Highscore_zeichnen(const char *ApplicationPath){
 
-	char Name[1];	///<Strukturarray mit einem Element um Fkt highscore() aufzurufen.
+	char Name[1];
 	Name[0]='a';
 	int index;
-	char ausgabe2[100];		///<Array um Punkte in Ziffern umzuwandeln
+	char ausgabe2[100];
 
 	highscore(Name, 1, ApplicationPath);
 	ClearWindow ();
