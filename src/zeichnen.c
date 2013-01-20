@@ -5,9 +5,11 @@
 /*  Funktion   :   Zuständig für sämtliche Anzeigen während des Spiel-       */
 /*                 verlaufs.                                                 */
 /*                                                                           */
-/*  Bearbeiter :   P. Ambuehl                                                */
+/*  Bearbeiter :   M.Schläppi                                                */
 /*                                                                           */
-/*  History    :   24.12.2012 erstellt ambup1	                             */
+/*  History    :   18.03.2012 schlm19 erstellt                               */
+/*				   25.12.2012 ambup1  Kopiert von Tequiz-Spiel, überarbeitet */
+/*									  und angepasst an Carme-Snake			 */
 /*                                                                           */
 /*  File Name  :   zeichnen.c                                                */
 /*                                                                           */
@@ -31,11 +33,17 @@
 /*                                                                           */
 /*  Funktion   : Erzeugt die Anzeigen des Hauptmenus.					     */
 /*                                                                           */
-/*  Bearbeiter : Peter Ambühl	                                             */
+/*  Bearbeiter : Marcel Schläppi                                             */
 /*                                                                           */
-/*  History    : 24.12.2012 erstellt ambup1							         */
+/*  History    : 23.06.2012 schlm19 erstellt 						         */
+/*				 26.12.2012 ambup1  Kopiert von Tequiz-Spiel, überarbeitet   */
+/*									und angepasst für Carme-Snake			 */
 /*                                                                           */
 /*****************************************************************************/
+
+/**
+ * Bildet das Menufenster auf dem Bildschirm ab.
+ */
 
 void Menu_zeichnen(void){
 	/* Hauptmenu Anzeigen zeichnen */
@@ -43,9 +51,8 @@ void Menu_zeichnen(void){
 	DrawTextXY (800, 300, COL_BLUE, "CARME-SNAKE");
 	SelectFont("Papyrus", 30, FONT_NORMAL);
 	DrawTextXY (240, 230, COL_GREEN, "1 Spiel starten");
-	DrawTextXY (240, 300, COL_LIGHTBLUE, "2 Hall of Fame");
-	DrawTextXY (240, 370, COL_YELLOW, "3 Comport wählen");
-	DrawTextXY (240, 440, COL_RED, "4 Spiel beenden");
+	DrawTextXY (236, 300, COL_LIGHTBLUE, "2 Hall of Fame");
+	DrawTextXY (230, 370, COL_RED, "3 Spiel beenden");
 	SelectFont("Agency FB", 16, FONT_NORMAL);
 	DrawTextXY (600, 530, COL_LIGHTBLUE, "P. Ambühl, M. Bärtschi, C. Stoller");
 }
@@ -57,22 +64,25 @@ void Menu_zeichnen(void){
 /*                                                                           */
 /*  Funktion   : Zeichnet die Highscoreliste.							     */
 /*                                                                           */
-/*  Bearbeiter : Peter Ambuehl	                                             */
+/*  Bearbeiter : Marcel Schläppi                                             */
 /*                                                                           */
-/*  History    : 24.12.2012 erstellt ambup1							         */
+/*  History    : 23.06.2012 schlm19 erstellt 						         */
+/*				 26.12.2012 ambup1  Kopiert von Tequiz-Spiel und angepasst an*/
+/*									Carme-Snake								 */
 /*                                                                           */
 /*****************************************************************************/
 
 /**
  * Bildet die Highscoreliste auf dem Bildschirm ab.
+ * @param *ApplicationPath ist Pointer auf den Pfad der ausführbaren Datei
  */
 
 void Highscore_zeichnen(const char *ApplicationPath){
 
-	char Name[1];
+	char Name[1];	///<Strukturarray mit einem Element um Fkt highscore() aufzurufen.
 	Name[0]='a';
 	int index;
-	char ausgabe2[100];
+	char ausgabe2[100];		///<Array um Punkte in Ziffern umzuwandeln
 
 	highscore(Name, 1, ApplicationPath);
 	ClearWindow ();

@@ -4,9 +4,10 @@
 /*                                                                           */
 /*  Funktion   :  Header-File zu game.c				     					 */
 /*				  															 */
-/*  Bearbeiter :  Peter Ambühl	                                             */
+/*  Bearbeiter :  Marcel Schläppi                                            */
 /*                                                                           */
-/*  History    :  24.12.2012 erstellt ambup1                                 */
+/*  History    :  18.03.2012 schlm19 erstellt                                */
+/*				  24.12.2012 ambup1	 Kopiert von Tequiz-Spiel				 */
 /*                                                                           */
 /*  File Name  :  game.h                                                     */
 /*                                                                           */
@@ -16,6 +17,6 @@
 #define GAME_H
 
 /* externe (globale) Funktion */
-extern int Game(int port, const char *ApplicationPath);
+extern int Game(int argc, char* argv[], const char *ApplicationPath);
 
 #endif

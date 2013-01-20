@@ -6,9 +6,11 @@
 /* 				   in den TopTen passend ein. Lädt TopTen aus Datei und      */
 /*				   speichert neue Liste wieder in der Datei					 */
 /*                                                                           */
-/*  Bearbeiter :   P.Ambuehl                                                 */
+/*  Bearbeiter :   D.Robellaz                                                */
 /*                                                                           */
-/*  History    :   17.12.2012 erstellt ambup1                                */
+/*  History    :   30.03.2012 robed1 erstellt                                */
+/*				   17.12.2012 ambup1 Kopiert von Tequiz-Spiel, Totalüber-	 */
+/*							         arbeitung und Anpassung an Carme-Snake	 */
 /*                                                                           */
 /*  File Name  :   highscore.c                                               */
 /*                                                                           */
@@ -32,9 +34,11 @@
 /*                                                                           */
 /*  Funktion   :   Wertet Scores aus und vergleicht sie						 */
 /*                                                                           */
-/*  Bearbeiter :   P.Ambuehl                                                 */
+/*  Bearbeiter :   D.Robellaz                                                */
 /*                                                                           */
-/*  History    :   17.12.2012 ambup1		                                 */
+/*  History    :   04.04.2012 robed1 Erstellt                                */
+/*				   17.12.2012 ambup1 Kopiert von Tequiz-Spiel, Totalüber-	 */
+/*							         arbeitung und Anpassung an Carme-Snake	 */
 /*                                                                           */
 /*****************************************************************************/
 
@@ -83,9 +87,10 @@ int highscore(char *name, int score, const char *ApplicationPath)
 /*  Funktion   :   Lädt das Highscore File und speichert die aktuellen Werte */
 /*                 in einem Array ab.                                        */
 /*                                                                           */
-/*  Bearbeiter :   P. Ambuehl                                                */
+/*  Bearbeiter :   D.Robellaz                                                */
 /*                                                                           */
-/*  History    :   17.12.2012 erstellt ambup1                                */
+/*  History    :   05.04.2012 Erstellt robed1                                */
+/*				   17.12.2012 ambup1 Kopiert von Tequiz-Spiel				 */
 /*                                                                           */
 /*****************************************************************************/
 
@@ -140,9 +145,10 @@ void fileload (const char *Path, player topten[11]) {
 /*                                                                           */
 /*  Funktion   :   Speichert die aktuellen Werte in das Highscore File ab.   */
 /*                                                                           */
-/*  Bearbeiter :   P. Ambuehl                                                */
+/*  Bearbeiter :   D.Robellaz                                                */
 /*                                                                           */
-/*  History    :   17.12.2012 erstellt ambup1                                */
+/*  History    :   06.04.2012 robed1 Erstellt                                */
+/*				   17.12.2012 ambup1 Kopiert von Tequiz-Spiel				 */
 /*                                                                           */
 /*****************************************************************************/
 
@@ -155,9 +161,9 @@ void fileload (const char *Path, player topten[11]) {
 void filesave (const char *Path, player topten[11]){
 
 	//Variablen definieren
-	int i;
-	//Buffer für den Pfad des .txt
-	char buffer2[1000];
+	int i;					///<Index für for-Schlaufe
+
+	char buffer2[1000];		///<Buffer für den Pfad des .txt
 
 	//Externes File definieren
 	FILE *Highscore;
@@ -196,9 +202,10 @@ void filesave (const char *Path, player topten[11]){
 /*                                                                           */
 /*  Funktion   :   Sortiert die Highscoredaten                               */
 /*                                                                           */
-/*  Bearbeiter :   P. Ambuehl                                                */
+/*  Bearbeiter :   D.Robellaz                                                */
 /*                                                                           */
-/*  History    :   17.12.2012 erstellt ambup1                                */
+/*  History    :   06.04.2012 robed1 Erstellt                                */
+/*				   17.12.2012 ambup1 Kopiert von Tequiz-Spiel				 */
 /*                                                                           */
 /*****************************************************************************/
 
@@ -233,8 +240,6 @@ void sort(player topten[11]){
 /****************************************************************************/
 /*	Ende Funktion sort      												*/
 /****************************************************************************/
-
-
 
 /*****************************************************************************/
 /*  Ende Modul highscore                                       				 */

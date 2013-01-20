@@ -5,9 +5,11 @@
 /*  Funktion   : Enthält Menufunktionalität und ruft externe                 */
 /* 				 Module auf.												 */
 /*                                                                           */
-/*  Bearbeiter : Peter Ambuehl                                               */
+/*  Bearbeiter : Marcel Schläppi                                             */
 /*                                                                           */
-/*  History    : 24.12.2012 erstellt ambup1					                 */
+/*  History    : 09.03.2012 Basis_Projekt importiert schlm19                 */
+/*				 24.12.2012 Kopiert von Tequiz-Spiel, überarbeitet und		 */
+/*							angepasst an Carme-Snake						 */
 /*                                                                           */
 /*  File Name  : Snake_main.c                                                */
 /*                                                                           */
@@ -35,9 +37,11 @@
 /*  Funktion   : Enthält Menufunktionalität und ruft externe                 */
 /* 				 Module auf.												 */
 /*                                                                           */
-/*  Bearbeiter : Peter Ambuehl	                                             */
-/*                                                                           */
-/*  History    : 24.12.2012 erstellt ambup1				                     */
+/*  History    : 18.03.2012 Nicht benötigten Demo-Code gelöscht schlm19      */
+/*               19.06.2012 überarbeiter schlm19                             */
+/*               23.06.2012 Hauptmenu hinzugefügt schlm19                    */
+/*				 24.12.2012 ambup1 Kopiert von Tequiz-Spiel, überarbeitet und*/
+/*							angepasst an Carme-Snake						 */
 /*                                                                           */
 /*****************************************************************************/
 
@@ -58,8 +62,7 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 	/* Bildschirm löschen */
 	ClearWindow();
 
-	int Key = 0;
-	int port = 1;		///< Wird benutzt um den COMPORT auszuwählen.
+	int Key=0;
 	Menu_zeichnen();
 
 	/* Taste einlesen */
@@ -70,7 +73,7 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 		if(Key=='1'){
 
 			/* Game aufrufen */
-			Game(port, ApplicationPath);
+			Game(argc, argv, ApplicationPath);
 
 			/* Hauptmenu anzeigen */
 			Key=0;
@@ -90,33 +93,6 @@ int gfxmain(int argc, char* argv[], const char *ApplicationPath)
 			Menu_zeichnen();
 		}
 		if(Key=='3'){
-
-			ClearWindow();
-
-			SelectFont("Arial MS", 15, FONT_NORMAL);
-			DrawTextXY (50, 50, COL_GREEN, "Bitte COMPORT Nummer eingeben (1 bis 7):");
-
-			while (!IsKeyPressReady()){
-			}
-			Key = GetKeyPress();
-
-			if (Key >= '1' && Key <= '7'){
-				port = Key - '0';
-			}
-
-			Key = -1;
-
-			DrawTextXY (50, 80, COL_GREEN, "Gewählt: COM");
-			char buffer[] = " \0";
-			buffer[0] = port + '0';
-			DrawTextXY (177, 80, COL_GREEN, buffer);
-
-			WaitMs(1200);
-
-			ClearWindow();
-			Menu_zeichnen();
-		}
-		if(Key=='4' || Key==W_KEY_ESCAPE || Key==W_KEY_CLOSE_WINDOW){
 
 			/* Grafikfenster schliessen */
 			CloseGraphic();

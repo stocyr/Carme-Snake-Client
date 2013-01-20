@@ -7,7 +7,8 @@
 /*				  															 */
 /*  Bearbeiter :  Marcel Schläppi                                            */
 /*                                                                           */
-/*  History    :  19.06.2012 erstellt schlm19                                */
+/*  History    :  19.06.2012 schlm19 erstellt                                */
+/*				  20.12.2012 ambup1  Kopiert von Tequiz-Spiel				 */
 /*                                                                           */
 /*  File Name  :  zeichnen.h                                                 */
 /*                                                                           */
@@ -16,7 +17,7 @@
 #ifndef ZEICHNEN_H
 #define ZEICHNEN_H
 
-/* externe (globale) Funktionen */
+// externe (globale) Funktionen
 extern void Menu_zeichnen(void);
 extern void Highscore_zeichnen(const char *ApplicationPath);
 

@@ -5,9 +5,11 @@
 /*  Funktion   :   Kommunikation mit dem Carme-Kit über die serielle Schnitt-*/
 /*				   stelle, Start des Spiels und Verarbeitung des Scores		 */
 /*                                                                           */
-/*  Bearbeiter :   P. Ambuehl                                                */
+/*  Bearbeiter :   M.Schläppi                                                */
 /*                                                                           */
-/*  History    :   24.12.2012 erstellt ambup1                                */
+/*  History    :   18.03.2012 schlm19 erstellt                               */
+/*				   24.12.2012 ambup1  Kopiert von Tequiz-Spiel und Totalüber-*/
+/*									  arbeitung und Anpassung an Carme-Snake */
 /*                                                                           */
 /*  File Name  :   game.c                                                    */
 /*                                                                           */
@@ -36,9 +38,14 @@
 /*  Funktion   : Ruft die Modulfunktionen auf. Kommuniziert mit den          */
 /* 				 übrigen Modulen.									         */
 /*                                                                           */
-/*  Bearbeiter : Peter Ambühl       	                                     */
+/*  Bearbeiter : Marcel Schläppi                                             */
 /*                                                                           */
-/*  History    : 24.12.2012 erstellt ambup1							         */
+/*  History    : 18.03.2012 schlm19 erstellt 						         */
+/*               01.04.2012 erste Versuche mit Spielfeld / Bewegung          */
+/*               02.04.2012 Funktionalität in Funktionen ausgelagert         */
+/*				 20.06.2012 überarbeitet									 */
+/*				 24.12.2012 Kopiert von Tequiz, Totalüberarbeitung und		 */
+/*							Anpassung an Carme-Snake						 */
 /*                                                                           */
 /*****************************************************************************/
 

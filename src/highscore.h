@@ -7,6 +7,8 @@
 /*  Bearbeiter :  Dominik Robellaz                                           */
 /*                                                                           */
 /*  History    :  30.03.2012 erstellt robed1                                 */
+/*				  17.12.2012 ambup1   Kopiert von Tequiz-Spiel, Kommentar	 */
+/*									  Doxygen-tauglich gemacht				 */
 /*                                                                           */
 /*  File Name  :  highscore.h                                                */
 /*                                                                           */
